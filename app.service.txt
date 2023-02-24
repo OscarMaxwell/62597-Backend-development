@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve app
+After=network.target
+
+[Service]
+User=cloud
+Group=www-data
+WorkingDirectory=/var/backend/62597-Backend-development
+Environment="PATH=/var/backend/62597-Backend-development/appvenv/bin"
+ExecStart=/var/backend/62597-Backend-development/appvenv/bin/gunicorn --workers 3 --bind unix:app.sock -m 007 app:app
+
+[Install]
+WantedBy=multi-user.target
