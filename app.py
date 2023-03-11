@@ -1,11 +1,27 @@
-from flask import Flask
+from flask import Flask, request
 from pymongo import MongoClient
 
 app = Flask(__name__)
 
+client = MongoClient(port=27017)
+db = client.webshop
+
+
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>"
+
+@app.route("/data", method=["GET","POST"])
+def data():
+    data = []
+    json_data = request.get_json()
+    
+
+    if request.method == "POST":
+       db.deliveryInfo.insert_one(json_data)
+    elif request.method == "GET":
+        return data.append(db.deliveryInfo.find())
+    
 
 
 # def get_database():
