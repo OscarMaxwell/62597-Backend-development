@@ -1,0 +1,5 @@
+Flask==2.2.3
+graphql-core==2.2.1
+graphene==2.1.8
+Flask_GraphQL
+setuptools==58.1.0
