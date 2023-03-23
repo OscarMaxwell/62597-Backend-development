@@ -32,7 +32,15 @@ def data():
 
 @app.route("/database")
 def database():
-    for post in db.deliveryInfo.find():
+    deliveryInfo = db.deliveryInfo
+
+    post = {"author": "Mike",
+            "text": "My first blog post!",
+            "tags": ["mongodb", "python", "pymongo"]}
+
+    deliveryInfo.insert_one(post)
+
+    for post in deliveryInfo.find():
         pprint.pprint(post)
 
 
