@@ -2,10 +2,13 @@ from flask import Flask, render_template, request
 from flask_graphql import GraphQLView
 from schema import schema
 from pymongo import MongoClient
-import pprint
+from flask_cors import CORS
 
 app = Flask(__name__)
+# enable CORS for all flask routes, but only for localhost:5173
+CORS(app, resources={r"/*": {"origins": ["http://localhost:5173"]}})
 
+# access the database
 client = MongoClient(port=27017)
 db = client.webshop
 
