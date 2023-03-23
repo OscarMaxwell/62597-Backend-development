@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_graphql import GraphQLView
 from schema import schema
 from pymongo import MongoClient
+import pprint
 
 app = Flask(__name__)
 
@@ -27,6 +28,12 @@ def data():
         db.deliveryInfo.insert_one(json_data)
     elif request.method == "GET":
         return str(data.append(db.deliveryInfo.find()))
+
+
+@app.route("/database")
+def database():
+    for post in db.deliveryInfo.find():
+        pprint.pprint(post)
 
 
 @app.route("/hello")
