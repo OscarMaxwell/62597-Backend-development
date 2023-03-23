@@ -19,8 +19,8 @@ app.add_url_rule(
     '/graphql', view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True))
 
 
-@app.route("/data", methods=["GET", "POST"])
-def data():
+@app.route("/data1", methods=["GET", "POST"])
+def data1():
     data = []
     json_data = request.get_json()
 
@@ -28,6 +28,13 @@ def data():
         db.deliveryInfo.insert_one(json_data)
     elif request.method == "GET":
         return str(data.append(db.deliveryInfo.find()))
+
+
+@app.route("/data", methods=["POST"])
+def data():
+    json_data = request.get_json()
+    db.deliveryInfo.insert_one(json_data)
+    return "Data added successfully"
 
 
 @app.route("/test")
