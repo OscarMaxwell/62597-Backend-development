@@ -41,7 +41,7 @@ def database():
     deliveryInfo.insert_one(post)
 
     for post in deliveryInfo.find():
-        pprint.pprint(post)
+        return (post)
 
 
 @app.route("/hello")
