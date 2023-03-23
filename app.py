@@ -48,11 +48,14 @@ def test():
 
     # Display all posts
     response = "<h1>All Posts</h1>"
+    i = 1
     for post in posts:
+        response += f"<h2>Item {i}</h2>"
         response += "<div>"
         for key, value in post.items():
             response += f"<p><strong>{key}:</strong> {value}</p>"
         response += "</div>"
+        i += 1
     return response
 
 
