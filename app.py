@@ -49,7 +49,15 @@ def test():
         posts.append(post)
 
     # Display all posts
-    return render_template("posts.html", posts=posts)
+    response = "<h1>All Posts</h1>"
+    for post in posts:
+        response += f"<h2>{post['author']}</h2>"
+        response += f"<p>{post['text']}</p>"
+        response += "<ul>"
+        for tag in post['tags']:
+            response += f"<li>{tag}</li>"
+        response += "</ul>"
+    return response
 
 
 @app.route("/hello")
