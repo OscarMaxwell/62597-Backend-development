@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, render_template, request
 from flask_graphql import GraphQLView
 from schema import schema
 from pymongo import MongoClient
@@ -34,15 +34,22 @@ def data():
 def test():
     deliveryInfo = db.deliveryInfo
 
-    post = {"author": "Mike",
-            "text": "My first blog post!",
-            "tags": ["mongodb", "python", "pymongo"]}
+    # Insert a new post
+    # post = {"author": "Mike",
+    #         "text": "My first blog post!",
+    #         "tags": ["mongodb", "python", "pymongo"]}
 
-    deliveryInfo.insert_one(post)
+    # deliveryInfo.insert_one(post)
 
     # for post in deliveryInfo.find():
 
-    return ("post")
+    # Retrieve all posts
+    posts = []
+    for post in deliveryInfo.find():
+        posts.append(post)
+
+    # Display all posts
+    return render_template("posts.html", posts=posts)
 
 
 @app.route("/hello")
