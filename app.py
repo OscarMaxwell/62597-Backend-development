@@ -40,8 +40,9 @@ def database():
 
     deliveryInfo.insert_one(post)
 
-    for post in deliveryInfo.find():
-        return (post)
+    # for post in deliveryInfo.find():
+
+    return (post)
 
 
 @app.route("/hello")
