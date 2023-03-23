@@ -44,19 +44,15 @@ def test():
     # for post in deliveryInfo.find():
 
     # Retrieve all posts
-    posts = []
-    for post in deliveryInfo.find():
-        posts.append(post)
+    posts = deliveryInfo.find()
 
     # Display all posts
     response = "<h1>All Posts</h1>"
     for post in posts:
-        response += f"<h2>{post['author']}</h2>"
-        response += f"<p>{post['text']}</p>"
-        response += "<ul>"
-        for tag in post['tags']:
-            response += f"<li>{tag}</li>"
-        response += "</ul>"
+        response += "<div>"
+        for key, value in post.items():
+            response += f"<p><strong>{key}:</strong> {value}</p>"
+        response += "</div>"
     return response
 
 
