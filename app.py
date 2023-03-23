@@ -58,4 +58,4 @@ def hello():
 
     post_id = posts.insert_one(post).inserted_id
 
-    return "PostID: " + str(post_id) + "Author: " + post["author"] + "Text: " + post["text"] + "Tags: " + post["tags"][0] + ", " + post["tags"][1] + ", " + post["tags"][2]
+    return "1234: " + str(post_id) + "Author: " + post["author"] + "Text: " + post["text"] + "Tags: " + post["tags"][0] + ", " + post["tags"][1] + ", " + post["tags"][2]
