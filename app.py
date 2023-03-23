@@ -30,8 +30,8 @@ def data():
         return str(data.append(db.deliveryInfo.find()))
 
 
-@app.route("/database")
-def database():
+@app.route("/test")
+def test():
     deliveryInfo = db.deliveryInfo
 
     post = {"author": "Mike",
@@ -42,7 +42,7 @@ def database():
 
     # for post in deliveryInfo.find():
 
-    return (post)
+    return ("post")
 
 
 @app.route("/hello")
