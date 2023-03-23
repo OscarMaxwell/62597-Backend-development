@@ -40,8 +40,9 @@ def test():
 
     deliveryInfo.insert_one(post)
 
-    for post in deliveryInfo.find():
-        pprint.pprint(post)
+    # for post in deliveryInfo.find():
+
+    return ("post")
 
 
 @app.route("/hello")
