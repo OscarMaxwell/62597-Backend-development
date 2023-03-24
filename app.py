@@ -1,14 +1,13 @@
 from flask import Flask, render_template, request
+from flask_cors import CORS
 from flask_graphql import GraphQLView
 from pymongo import MongoClient
 
 from schema import schema
 
-#from flask_cors import CORS
-
 app = Flask(__name__)
 # enable CORS for all flask routes
-#CORS(app)
+CORS(app)
 
 # access the database
 client = MongoClient(port=27017)
@@ -32,7 +31,10 @@ def data1():
     if request.method == "POST":
         db.deliveryInfo.insert_one(json_data)
     elif request.method == "GET":
-        return str(data.append(db.deliveryInfo.find()))
+        if str(data.append(db.deliveryInfo.find())) == None:
+            return "No entries"
+        else:
+            return str(data.append(db.deliveryInfo.find())) 
 
 
 @app.route("/data", methods=["POST"])
