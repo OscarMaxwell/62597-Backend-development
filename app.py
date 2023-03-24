@@ -31,7 +31,7 @@ def data1():
     if request.method == "POST":
         db.deliveryInfo.insert_one(json_data)
     elif request.method == "GET":
-        if str(data.append(db.deliveryInfo.find())) == None:
+        if str(data.append(db.deliveryInfo.find())) == "None":
             return "No entries"
         else:
             return str(data.append(db.deliveryInfo.find())) 
