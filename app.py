@@ -36,6 +36,7 @@ def data1():
 @app.route("/data", methods=["POST"])
 def data():
     json_data = request.get_json()
+    json_data.headers.add('Access-Control-Allow-Origin', '*')
     db.deliveryInfo.insert_one(json_data)
     return "Data added successfully"
 
