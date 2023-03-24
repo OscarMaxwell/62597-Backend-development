@@ -1,5 +1,6 @@
 from graphene import ObjectType, String, Schema
 
+
 class Query(ObjectType):
     # this defines a Field `hello` in our Schema with a single Argument `first_name`
     # By default, the argument name will automatically be camel-based into firstName in the generated schema
@@ -13,5 +14,6 @@ class Query(ObjectType):
 
     def resolve_goodbye(root, info):
         return 'See ya!'
+
 
 schema = Schema(query=Query)
