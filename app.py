@@ -2,11 +2,11 @@ from flask import Flask, render_template, request
 from flask_graphql import GraphQLView
 from schema import schema
 from pymongo import MongoClient
-from flask_cors import CORS
+# from flask_cors import CORS
 
 app = Flask(__name__)
 # enable CORS for all flask routes
-CORS(app)
+# CORS(app)
 
 # access the database
 client = MongoClient(port=27017)
@@ -35,9 +35,9 @@ def data1():
 
 @app.route("/data", methods=["POST"])
 def data():
-    json_data = request.get_json()
-    json_data.headers.add('Access-Control-Allow-Origin', '*')
-    db.deliveryInfo.insert_one(json_data)
+    response = request.get_json()
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    db.deliveryInfo.insert_one(response)
     return "Data added successfully"
 
 
