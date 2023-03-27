@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-# from flask_cors import CORS
+from flask_cors import CORS
 from flask_graphql import GraphQLView
 from pymongo import MongoClient
 
@@ -7,7 +7,7 @@ from schema import schema
 
 app = Flask(__name__)
 # enable CORS for all flask routes
-# CORS(app)
+CORS(app)
 
 # access the database
 client = MongoClient(port=27017)
