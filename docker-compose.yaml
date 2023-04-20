@@ -23,7 +23,7 @@ services:
     environment:
       - FLASK_SERVER_PORT=9091
     volumes:
-      - ./flask_api:/
+      - ./flask_api:/flask_api
     depends_on:
       -  mongo  
 
