@@ -16,7 +16,7 @@ services:
   api_endpoint:
     build:
       context: flask_api
-      dockerfile: ./flask_api/Dockerfile
+      dockerfile: Dockerfile
     # flask requires SIGINT to stop gracefully
     # (default stop signal from Compose is SIGTERM)
     stop_signal: SIGINT
