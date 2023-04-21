@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from flask_graphql import GraphQLView
 from pymongo import MongoClient
 
-from flask.schema import schema
+from flask_api.schema import schema
 
 app = Flask(__name__)
 # enable CORS for all flask routes
