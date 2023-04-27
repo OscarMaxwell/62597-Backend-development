@@ -16,15 +16,6 @@ services:
     depends_on:
       - flask-app
 
-  clamav:
-    image: mkodockx/docker-clamav
-    container_name: clamav
-    restart: always
-    ports:
-      - "80:80"
-    volumes:
-      - clamav_data:/data
-
   mongodb:
     image: mongo:latest
     ports:
@@ -33,6 +24,16 @@ services:
       - mongodb_data:/data/db
     depends_on:
       - flask-app
+
+  clamav:
+    image: mkodockx/docker-clamav
+    container_name: clamav
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - clamav_data:/data
+  
 volumes:
     mongodb_data:
     clamav_data:
