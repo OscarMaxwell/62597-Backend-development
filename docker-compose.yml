@@ -34,7 +34,7 @@ services:
     volumes:
       - clamav_data:/data
     depends_on:
-      - nginx
+      - nginx 
   
 volumes:
     mongodb_data:
