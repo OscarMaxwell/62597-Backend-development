@@ -46,6 +46,7 @@ def data():
 
 @app.route("/test")
 def test():
+    print("test")
     deliveryInfo = db.deliveryInfo
 
     # Insert a new post
