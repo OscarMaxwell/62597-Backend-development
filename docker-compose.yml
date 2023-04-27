@@ -33,6 +33,8 @@ services:
       - "80:80"
     volumes:
       - clamav_data:/data
+    depends_on:
+      - nginx
   
 volumes:
     mongodb_data:
