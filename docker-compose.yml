@@ -33,3 +33,6 @@ services:
       - "80:80"
     volumes:
       - clamav_data:./data
+  volumes:
+    mongodb_data:
+    clamav_data:
