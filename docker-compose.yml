@@ -34,6 +34,6 @@ services:
     volumes:
       - clamav_data:/data
   
-  volumes:
+volumes:
     mongodb_data:
     clamav_data:
