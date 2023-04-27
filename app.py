@@ -16,9 +16,7 @@ db = client.webshop
 
 @app.route("/")
 def hello_world():
-    one = db.deliveryInfo.find()
-    print(one)
-    return "<p>Hello, World!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>" + " <p>" + one + "</p>"
+    return "<p>Hello, World!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>" 
 
 
 app.add_url_rule(
