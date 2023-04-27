@@ -15,3 +15,13 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - flask-app
+
+
+  clamav:
+    image: mkodockx/docker-clamav
+    container_name: clamav
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - clamav_data:/data
