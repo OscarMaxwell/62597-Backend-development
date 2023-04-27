@@ -30,7 +30,7 @@ services:
     container_name: clamav
     restart: always
     ports:
-      - "80:80"
+      - "3310:3310"
     volumes:
       - clamav_data:/data
     depends_on:
@@ -38,4 +38,4 @@ services:
   
 volumes:
     mongodb_data:
-    clamav_data:
+    clamav_data:%
