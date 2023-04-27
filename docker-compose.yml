@@ -25,3 +25,6 @@ services:
       - "80:80"
     volumes:
       - clamav_data:/data
+
+  volumes:
+  clamav_data:
