@@ -21,7 +21,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - mongodb_data:/data/db
+      - mongodb_data:./data/db
     depends_on:
       - flask-app
 
@@ -32,4 +32,4 @@ services:
     ports:
       - "80:80"
     volumes:
-      - clamav_data:/data
+      - clamav_data:./data
