@@ -38,4 +38,4 @@ services:
   
 volumes:
     mongodb_data:
-    clamav_data:%
+    clamav_data:
