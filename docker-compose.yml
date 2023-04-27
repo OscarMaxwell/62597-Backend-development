@@ -26,5 +26,5 @@ services:
     volumes:
       - clamav_data:/data
 
-  volumes:
+volumes:
   clamav_data:
