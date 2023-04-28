@@ -4,11 +4,13 @@ services:
 
   flask-app:
     build: .
+    container_name: flask-app
     ports:
       - "8000:8000"
 
   mongodb:
     image: mongo:latest
+    container_name: mongodb
     ports:
       - "27017:27017"
     volumes:
