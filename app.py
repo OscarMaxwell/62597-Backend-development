@@ -16,7 +16,7 @@ db = client.webshop
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>"
+    return "<p>Hello, World!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>" 
 
 
 app.add_url_rule(
@@ -46,6 +46,7 @@ def data():
 
 @app.route("/test")
 def test():
+    print("test")
     deliveryInfo = db.deliveryInfo
 
     # Insert a new post
