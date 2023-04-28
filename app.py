@@ -10,7 +10,7 @@ app = Flask(__name__)
 # CORS(app)
 
 # access the database
-client = MongoClient(host='mongodb', port=27017)
+client = MongoClient(host='mongodb', port=27017, username='webshop', password='admin123')
 db = client.webshop
 
 
