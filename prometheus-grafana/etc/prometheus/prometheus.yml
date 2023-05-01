@@ -4,7 +4,7 @@ global:
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
 scrape_configs:
-  - job_name: 'prometheus_test'
+  - job_name: 'prometheus'
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9090']
@@ -12,4 +12,4 @@ scrape_configs:
   - job_name: 'node'
     scrape_interval: 5s
     static_configs:
-      - targets: ['localhost:9100', '130.225.170.74:9100']
+      - targets: ['node_exporter:9100']
